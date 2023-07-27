@@ -205,20 +205,25 @@ class DumpCommand extends Command
         }
 
         if (!empty($dumpSettings['gdpr-replacements'])) {
+            $originalReplacements = $dumpSettings['gdpr-replacements'];
+            $dumpSettings['gdpr-replacements'] = str_replace('\\', "'", $dumpSettings['gdpr-replacements']);
             $dumpSettings['gdpr-replacements'] = json_decode($dumpSettings['gdpr-replacements'],
                 true);
             if (json_last_error()) {
                 throw new \UnexpectedValueException(sprintf('Invalid gdpr-replacements json (%s): %s',
-                    json_last_error_msg(), $dumpSettings['gdpr-replacements']));
+                    json_last_error_msg(), $originalReplacements));
             }
         }
 
         if (!empty($dumpSettings['gdpr-replacements-file'])) {
-            $dumpSettings['gdpr-replacements'] = json_decode(file_get_contents($dumpSettings['gdpr-replacements-file']),
-                true);
+            $originalReplacements = file_get_contents($dumpSettings['gdpr-replacements-file']);
+            $replacements = $originalReplacements;
+            $replacements = str_replace('\\', "'", $replacements);
+
+            $dumpSettings['gdpr-replacements'] = json_decode($replacements,true);
             if (json_last_error()) {
                 throw new \UnexpectedValueException(sprintf('Invalid gdpr-replacements json (%s): %s',
-                    json_last_error_msg(), $dumpSettings['gdpr-replacements']));
+                    json_last_error_msg(), $originalReplacements));
             }
         }
 
