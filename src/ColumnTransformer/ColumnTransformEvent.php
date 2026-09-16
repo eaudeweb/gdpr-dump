@@ -3,7 +3,7 @@
 namespace machbarmacher\GdprDump\ColumnTransformer;
 
 
-use Symfony\Component\EventDispatcher\Event;
+use Symfony\Contracts\EventDispatcher\Event;
 
 class ColumnTransformEvent extends Event
 {

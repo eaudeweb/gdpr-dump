@@ -17,7 +17,8 @@
     }
   ],
   "bin": [
-    "mysqldump"
+    "mysqldump",
+    "mariadb-dump"
   ],
   "autoload": {
     "psr-4": {

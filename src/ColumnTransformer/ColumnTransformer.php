@@ -37,7 +37,7 @@ abstract class ColumnTransformer
     {
         self::setUp();
         $event = new ColumnTransformEvent($tableName, $columnName, $expression);
-        self::$dispatcher->dispatch(self::COLUMN_TRANSFORM_REQUEST, $event);
+        self::$dispatcher->dispatch($event, self::COLUMN_TRANSFORM_REQUEST);
         if ($event->isReplacementSet()) {
             return $event->getReplacementValue();
         }

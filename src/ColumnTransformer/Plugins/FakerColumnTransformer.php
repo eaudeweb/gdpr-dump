@@ -53,7 +53,7 @@ class FakerColumnTransformer extends ColumnTransformer
 
     public function getValue($expression)
     {
-        $arguments = $expression['arguments'] ?: [];
+        $arguments = $expression['arguments'] ?? [];
         if (!empty($expression['unique'])) {
           return self::$uniqueGenerator->format(self::$formatterTansformerMap[$expression['formatter']], $arguments);
         }

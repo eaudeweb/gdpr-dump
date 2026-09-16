@@ -255,6 +255,8 @@ class DumpCommand extends Command
                 $pdoSettings);
             $dumper->start($input->getOption('result-file'));
         }
+
+        return 0;
     }
 
     protected function getDefaults($extraFile)
