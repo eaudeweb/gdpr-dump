@@ -1,0 +1,108 @@
+{
+  "users_field_data": {
+    "name": {
+      "formatter": "safeEmail",
+      "unique": true,
+      "exclude": {
+        "uid": "SELECT uid FROM users_field_data WHERE mail LIKE '%@example.org' OR mail LIKE '%@example.com'"
+      }
+    },
+    "mail": {
+      "formatter": "safeEmail",
+      "unique": true,
+      "exclude": {
+        "uid": "SELECT uid FROM users_field_data WHERE mail LIKE '%@example.org' OR mail LIKE '%@example.com'"
+      }
+    },
+    "init": {
+      "formatter": "safeEmail",
+      "unique": true,
+      "exclude": {
+        "uid": "SELECT uid FROM users_field_data WHERE mail LIKE '%@example.org' OR mail LIKE '%@example.com'"
+      }
+    },
+    "pass": {
+      "formatter": "clear",
+      "exclude": {
+        "uid": [ 0, 1 ]
+      }
+    }
+  },
+  "authmap": {
+    "authname": {
+      "formatter": "safeEmail",
+      "unique": true
+    }
+  },
+  "group_relationship_field_data": {
+    "label": {
+      "formatter": "safeEmail",
+      "include": {
+        "plugin_id": [
+          "group_membership"
+        ]
+      }
+    }
+  },
+  "users_data": {
+    "value": {
+      "formatter": "passthrough",
+      "arguments": [
+        "613a303a7b7d"
+      ],
+      "include": {
+        "module": [
+          "tfa"
+        ]
+      }
+    }
+  },
+  "webform_submission": {
+    "remote_addr": {
+      "formatter": "ipv4"
+    },
+    "notes": {
+      "formatter": "clear"
+    }
+  },
+  "webform_submission_data": {
+    "value": {
+      "formatter": "text",
+      "exclude": {
+        "name": [
+          "newsletter_subscribe"
+        ]
+      }
+    }
+  },
+  "elog": {
+    "log_message__value": {
+      "formatter": "clear"
+    },
+    "diff": {
+      "formatter": "clear"
+    },
+    "form_data": {
+      "formatter": "clear"
+    },
+    "ip": {
+      "formatter": "ipv4"
+    },
+    "user_agent": {
+      "formatter": "userAgent"
+    }
+  },
+  "captcha_sessions": {
+    "ip_address": {
+      "formatter": "ipv4"
+    }
+  },
+  "SimpleSAMLphp_kvstore": {
+    "_value": {
+      "formatter": "passthrough",
+      "arguments": [
+        "b:0;"
+      ]
+    }
+  }
+}

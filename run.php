@@ -1,0 +1,12 @@
+<?php
+
+use machbarmacher\GdprDump\Command\DumpCommand;
+use Symfony\Component\Console\Application;
+
+require __DIR__ . '/_bootstrap.php';
+
+$app = new Application('myapp', '1.0 (stable)');
+$command = new DumpCommand();
+$app->add($command);
+$app->setDefaultCommand($command->getName(), true);
+$app->run();

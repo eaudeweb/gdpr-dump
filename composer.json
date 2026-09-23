@@ -2,12 +2,12 @@
   "name": "eaudeweb/gdpr-dump",
   "description": "A drop-in replacement for mysqldump that optionally sanitizes DB fields for better GDPR conformity.",
   "require": {
-    "symfony/console": "^6.0 || ^5.0 || ^4.0 || ^3.4",
+    "symfony/console": "^7.0 || ^6.0 || ^5.0 || ^4.0 || ^3.4",
     "eaudeweb/mysqldump-php": "^2.8",
     "cweagans/composer-patches": "^1.6",
     "bomoko/mysql-cnf-parser": "^0.0.2",
     "fakerphp/faker": "^1.20",
-    "symfony/event-dispatcher": "~3.4|~4.0|~5.0|~6.0"
+    "symfony/event-dispatcher": "~3.4|~4.0|~5.0|~6.0|~7.0"
   },
   "license": "GPL-2.0-or-later",
   "authors": [
@@ -17,7 +17,8 @@
     }
   ],
   "bin": [
-    "mysqldump"
+    "mysqldump",
+    "mariadb-dump"
   ],
   "autoload": {
     "psr-4": {

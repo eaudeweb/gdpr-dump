@@ -170,7 +170,7 @@ class DumpCommand extends Command
         return $password;
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $dumpSettings =
             $this->getOptOptions($input->getOption('opt'))
@@ -255,6 +255,8 @@ class DumpCommand extends Command
                 $pdoSettings);
             $dumper->start($input->getOption('result-file'));
         }
+
+        return 0;
     }
 
     protected function getDefaults($extraFile)
