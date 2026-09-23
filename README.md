@@ -104,7 +104,20 @@ gdpr-replacements='{"fakertest":{"name": {"formatter":"name"}, "telephone": {"fo
 
 ```
 
-## Use with Drush
+## Use in Drupal projects (with Drush)
+
+1. Add this repository to your `composer.json`:
+```JSON
+{
+    "name": "gdpr-dump",
+    "type": "vcs",
+    "url": "https://github.com/eaudeweb/gdpr-dump",
+    "no-api": true
+},
+```
+2. Install the library in your project: `composer require eaudeweb/gdpr-dump`
+3. Create `anonymize.schema.json` JSON file to anonymize user data
+4. Optionally, use the [SQL Dump action](https://github.com/eaudeweb/drupal-sql-dump-action/) in your workflow.
 
 Drush is using the `mysqldump` / `mariadb-dump` (as of with Drush 13) to make queries to the database, therefore we just need to make sure the proper command is used when calling the command. See the example below which is manipulating the `$PATH` variable to achieve this:
 
