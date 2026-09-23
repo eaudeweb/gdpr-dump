@@ -4,38 +4,27 @@
       "formatter": "safeEmail",
       "unique": true,
       "exclude": {
-        "uid": [
-          0,
-          1
-        ]
+        "uid": "SELECT uid FROM users_field_data WHERE mail LIKE '%@example.org' OR mail LIKE '%@example.com'"
       }
     },
     "mail": {
       "formatter": "safeEmail",
       "unique": true,
       "exclude": {
-        "uid": [
-          0,
-          1
-        ]
+        "uid": "SELECT uid FROM users_field_data WHERE mail LIKE '%@example.org' OR mail LIKE '%@example.com'"
       }
     },
     "init": {
       "formatter": "safeEmail",
       "unique": true,
       "exclude": {
-        "uid": [
-          0,
-          1
-        ]
+        "uid": "SELECT uid FROM users_field_data WHERE mail LIKE '%@example.org' OR mail LIKE '%@example.com'"
       }
     },
     "pass": {
       "formatter": "clear",
       "exclude": {
-        "uid": [
-          0
-        ]
+        "uid": [ 0, 1 ]
       }
     }
   },
