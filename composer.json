@@ -4,7 +4,6 @@
   "require": {
     "symfony/console": "^7.0 || ^6.0 || ^5.0 || ^4.0 || ^3.4",
     "eaudeweb/mysqldump-php": "^2.8",
-    "cweagans/composer-patches": "^1.6",
     "bomoko/mysql-cnf-parser": "^0.0.2",
     "fakerphp/faker": "^1.20",
     "symfony/event-dispatcher": "~3.4|~4.0|~5.0|~6.0|~7.0"
@@ -25,21 +24,9 @@
       "machbarmacher\\GdprDump\\": "src/"
     }
   },
-  "extra": {
-    "patches": {
-      "ifsnop/mysqldump-php": {
-        "Add getter": "https://patch-diff.githubusercontent.com/raw/ifsnop/mysqldump-php/pull/137.patch"
-      }
-    }
-  },
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require-dev": {
     "phpunit/phpunit": "^8.1"
-  },
-  "config": {
-    "allow-plugins": {
-      "cweagans/composer-patches": true
-    }
   }
 }
